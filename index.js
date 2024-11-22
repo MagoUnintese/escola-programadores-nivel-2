@@ -110,3 +110,27 @@ pessoa1.nome = 'Cristhian';
 console.log(pessoa1.nome, 'não gosta do', pessoa3.nome);
 
 
+function revelaNome (){
+    const nome = document.getElementById('meuNome');
+    nome.innerHTML = 'Mago';
+    nome.style.backgroundColor = '3rem';
+}
+
+
+
+const form = document.getElementById('formulario');
+const erro = document.getElementById('erro');
+
+form.addEventListener('submit', (event) =>{
+    const name = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+
+    if (name.length < 5){
+        erro.innerHTML = 'Nome inválido, o nome precisa ter mais do que 3 caracteres';
+        event.preventDefault();
+    } else if ( !email.includes("@")){
+        erro.innerHTML = 'Email inválido';
+        event.preventDefault();
+    }
+});
+
